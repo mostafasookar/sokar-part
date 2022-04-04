@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimitedWebsite", "src\PartsUnlimitedWebsite\PartsUnlimitedWebsite.csproj", "{14941417-5B07-4504-91C9-F7C679FEBA2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.Models", "src\PartsUnlimited.Models\PartsUnlimited.Models.csproj", "{C6E18287-B905-4685-9653-515ED914990B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14941417-5B07-4504-91C9-F7C679FEBA2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14941417-5B07-4504-91C9-F7C679FEBA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14941417-5B07-4504-91C9-F7C679FEBA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14941417-5B07-4504-91C9-F7C679FEBA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E18287-B905-4685-9653-515ED914990B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E18287-B905-4685-9653-515ED914990B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E18287-B905-4685-9653-515ED914990B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E18287-B905-4685-9653-515ED914990B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D80E9FF-8E56-419C-BDFA-87AA27E032C5}
+	EndGlobalSection
+EndGlobal
