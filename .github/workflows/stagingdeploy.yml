@@ -1,0 +1,40 @@
+name: Build and deploy app
+
+on:
+  push
+
+env:
+  AZURE_WEBAPP_NAME: partsunlimited-web-suffix   # replace suffix
+  AZURE_WEBAPP_PACKAGE_PATH: '.'
+  DEPLOYMENT_SLOT: staging
+  DOTNET_VERSION: '3.1'
+  AZURE_RESOURCEGROUP_NAME: hands-on-lab-suffix  # replace suffix  
+  
+jobs:
+  build-and-deploy:
+    runs-on: windows-2019
+    steps:
+
+      # Checkout the repo
+      - uses: actions/checkout@main
+      
+      # Setup .NET Core SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }} 
+      
+      # Run dotnet build and publish
+      - name: dotnet build and publish
+        run: |
+          dotnet build PartsUnlimited.sln --configuration Release
+          dotnet publish PartsUnlimited.sln -c Release -o partsunlimitedweb
+          
+      # Deploy to Azure Web app slot
+      - name: 'Run Azure webapp deploy action using publish profile credentials'
+        uses: azure/webapps-deploy@v2
+        with: 
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
+          package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/partsunlimitedweb'
+          slot-name: ${{ env.DEPLOYMENT_SLOT }}
